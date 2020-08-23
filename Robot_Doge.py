@@ -79,6 +79,14 @@ class MyClient(discord.Client):
             await message.channel.send("Days since last major update: " + Days + " (Updates with just cases don't cout)")
             print("Tf2 was used by", message.author.name, "ID:", message.author.id)
 
+        #Simple test to see if bot is up
+        if message.content == 'dice':
+            min = 1
+            max = 6
+            result = random.randint(min, max)
+            await message.channel.send(result + arg)
+            print("dice was used by", message.author.name, "ID:", message.author.id)
+
 
 client = MyClient()
 client.run(token)

@@ -87,6 +87,14 @@ class MyClient(discord.Client):
             await message.channel.send(result + arg)
             print("dice was used by", message.author.name, "ID:", message.author.id)
 
+        #Gets todays date and sends it to user
+        if message.content == 'date':
+            today = date.today()
+            UKdate = today.strftime("%d/%m/%Y")
+            await message.channel.send("The date today (UK format) is : " + UKdate)
+            print("dice was used by", message.author.name, "ID:", message.author.id)
+
+
 
 client = MyClient()
 client.run(token)
